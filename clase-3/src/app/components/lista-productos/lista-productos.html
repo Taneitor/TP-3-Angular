@@ -1,0 +1,22 @@
+<div>
+  <h2>Lista de productos:</h2>
+  <button (click)="simularAgregarProducto()">Simular agregar</button>
+  <button (click)="limpiar()">Limpiar lista productos</button>
+
+  <ul *ngIf="!loading && products.length > 0">
+    <li *ngFor="let product of products">
+      <div>
+        <h3>{{ product.nombre }}</h3>
+
+        <span>Precio original: ${{ product.precio }}</span>
+        <span
+          >Precio con descuento {{ porcentaje_descuento }}% off ${{
+            product.precio | descuento : porcentaje_descuento
+          }}</span
+        >
+        <button (click)="eliminar(product.id)">Eliminar</button>
+        <p>{{ fechaActual | fecha : 'yyyy-MM-dd' }}</p>
+      </div>
+    </li>
+  </ul>
+</div>
