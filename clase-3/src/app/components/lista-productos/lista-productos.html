@@ -9,13 +9,14 @@
         <h3>{{ product.nombre }}</h3>
 
         <span>Precio original: ${{ product.precio }}</span>
-        <span
-          >Precio con descuento {{ porcentaje_descuento }}% off ${{
+        <br/>
+        <span>Precio con descuento :  {{ porcentaje_descuento }}  % off  $ {{
             product.precio | descuento : porcentaje_descuento
-          }}</span
-        >
+          }}</span>
+        <br/>
+        <span>Fecha Alta: {{ product.fechaAlta | fecha}}</span>
+        <br/>
         <button (click)="eliminar(product.id)">Eliminar</button>
-        <p>{{ fechaActual | fecha : 'yyyy-MM-dd' }}</p>
       </div>
     </li>
   </ul>

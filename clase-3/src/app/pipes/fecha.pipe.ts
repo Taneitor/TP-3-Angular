@@ -2,8 +2,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'fecha',
+  standalone: true
 })
+
 export class FechaPipe implements PipeTransform {
+   
   transform(fecha: Date | string, formato: string = 'dd/MM/yyyy'): string {
     const date = new Date(fecha);
 
